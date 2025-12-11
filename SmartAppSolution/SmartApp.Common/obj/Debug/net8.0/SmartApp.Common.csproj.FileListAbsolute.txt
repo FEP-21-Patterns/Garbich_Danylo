@@ -1,0 +1,11 @@
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\bin\Debug\net8.0\SmartApp.Common.deps.json
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\bin\Debug\net8.0\SmartApp.Common.dll
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\bin\Debug\net8.0\SmartApp.Common.pdb
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\SmartApp.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\SmartApp.Common.AssemblyInfoInputs.cache
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\SmartApp.Common.AssemblyInfo.cs
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\SmartApp.Common.csproj.CoreCompileInputs.cache
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\SmartApp.Common.dll
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\refint\SmartApp.Common.dll
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\SmartApp.Common.pdb
+D:\Patterns\lab_5\SmartAppSolution\SmartApp.Common\obj\Debug\net8.0\ref\SmartApp.Common.dll

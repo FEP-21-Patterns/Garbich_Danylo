@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartApp IoT Dashboard</title>
+    <!-- Переконайтеся, що шлях до style.css правильний -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>🏠 SmartApp IoT Dashboard</h1>
+    </header>
+
+    <main>
+        <!-- Цей контейнер JavaScript заповнить даними -->
+        <section class="devices" id="devices-container">
+            <p>Завантаження пристроїв...</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 SmartApp IoT — Microservices Demo</p>
+    </footer>
+
+    <!-- [НОВИЙ СКРИПТ] -->
+    <script>
+        // Ця функція запуститься, коли сторінка завантажиться
+        document.addEventListener("DOMContentLoaded", () => {
+            loadDevices();
+        });
+
+        // Функція для завантаження та відображення пристроїв
+        async function loadDevices() {
+            const container = document.getElementById("devices-container");
+
+            try {
+                // 1. Робимо GET-запит до нашого нового API
+                // [ВИПРАВЛЕНО] Використовуємо повний (абсолютний) URL, оскільки відносний шлях не розпізнається
+                const response = await fetch('http://localhost:5000/api/devices');
+
+                if (!response.ok) {
+                    throw new Error(`HTTP помилка! Статус: ${response.status}`);
+                }
+
+                const devices = await response.json();
+
+                // 2. Очищуємо контейнер
+                if (devices.length === 0) {
+                    container.innerHTML = "<p>Пристроїв не знайдено. Переконайтеся, що всі сервіси (5001, 5002, 5003) запущені.</p>";
+                    return;
+                }
+
+                container.innerHTML = ""; // Очищуємо "Завантаження..."
+
+                // 3. Створюємо HTML для кожної картки пристрою
+                devices.forEach(device => {
+                    const card = document.createElement("div");
+                    card.className = "device-card";
+                    // Використовуємо функцію для генерації HTML картки
+                    card.innerHTML = createDeviceCardHTML(device);
+                    container.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error("Не вдалося завантажити пристрої:", error);
+                container.innerHTML = "<p>Помилка завантаження пристроїв. Перевірте консоль (F12) і переконайтеся, що всі сервіси запущені.</p>";
+            }
+        }
+
+        // Функція для генерації HTML однієї картки
+        function createDeviceCardHTML(device) {
+            let statusHTML = "";
+            let controlsHTML = "";
+            let title = device.type.replace('_', ' ');
+
+            // Генеруємо HTML в залежності від типу пристрою
+            if (device.type === "smart_speaker") {
+                const statusText = device.is_on ? "ON" : "OFF";
+                const buttonText = device.is_on ? "Turn Off" : "Turn On";
+                statusHTML = `<p>Status: ${statusText}</p>`;
+                controlsHTML = `
+                    <form action="/toggle_speaker" method="post">
+                        <button type="submit" class="btn">${buttonText}</button>
+                    </form>
+                    <p>Volume: ${device.volume}%</p>
+                `;
+            } else if (device.type === "smart_light") {
+                const statusText = device.is_on ? "ON" : "OFF";
+                const buttonText = device.is_on ? "Turn Off" : "Turn On";
+                statusHTML = `<p>Status: ${statusText}</p>`;
+                controlsHTML = `
+                    <form action="/toggle_light" method="post">
+                        <button type="submit" class="btn">${buttonText}</button>
+                    </form>
+                    <p>Brightness: ${device.brightness}%</p>
+                `;
+            } else if (device.type === "smart_curtains") {
+                const statusText = device.is_open ? "OPEN" : "CLOSED";
+                const buttonText = device.is_open ? "Close" : "Open";
+                statusHTML = `<p>Status: ${statusText}</p>`;
+                controlsHTML = `
+                    <form action="/toggle_curtains" method="post">
+                        <button type="submit" class="btn">${buttonText}</button>
+                    </form>
+                    <p>Position: ${device.position}%</p>
+                `;
+            }
+
+            // Збираємо все до купи
+            return `
+                <h2>${title.charAt(0).toUpperCase() + title.slice(1)}</h2>
+                <p><strong>ID:</strong> ${device.device_id}</p>
+                <p><strong>Connection:</strong> ${device.connection}</p>
+                ${statusHTML}
+                ${controlsHTML}
+            `;
+        }
+    </script>
+</body>
+</html>
