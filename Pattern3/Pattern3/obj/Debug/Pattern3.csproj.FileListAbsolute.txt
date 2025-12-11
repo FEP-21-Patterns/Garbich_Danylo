@@ -1,8 +1,0 @@
-C:\Users\danul\source\repos\Pattern3\Pattern3\bin\Debug\Pattern3.exe.config
-C:\Users\danul\source\repos\Pattern3\Pattern3\bin\Debug\Pattern3.exe
-C:\Users\danul\source\repos\Pattern3\Pattern3\bin\Debug\Pattern3.pdb
-C:\Users\danul\source\repos\Pattern3\Pattern3\obj\Debug\Pattern3.csproj.AssemblyReference.cache
-C:\Users\danul\source\repos\Pattern3\Pattern3\obj\Debug\Pattern3.csproj.CoreCompileInputs.cache
-C:\Users\danul\source\repos\Pattern3\Pattern3\obj\Debug\Pattern3.exe
-C:\Users\danul\source\repos\Pattern3\Pattern3\obj\Debug\Pattern3.pdb
-C:\Users\danul\source\repos\Pattern3\Pattern3\obj\Debug\Pattern3.exe.config
