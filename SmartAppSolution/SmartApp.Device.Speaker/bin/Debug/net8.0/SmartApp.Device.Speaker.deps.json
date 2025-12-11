@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SmartApp.Device.Speaker/1.0.0": {
+        "dependencies": {
+          "SmartApp.Common": "1.0.0"
+        },
+        "runtime": {
+          "SmartApp.Device.Speaker.dll": {}
+        }
+      },
+      "SmartApp.Common/1.0.0": {
+        "runtime": {
+          "SmartApp.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SmartApp.Device.Speaker/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SmartApp.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

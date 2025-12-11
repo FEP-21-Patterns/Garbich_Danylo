@@ -1,0 +1,27 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "SmartApp.Device.Speaker\\SmartApp.Device.Speaker.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SmartApp.Device.Light\\SmartApp.Device.Light.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SmartApp.Device.Curtains\\SmartApp.Device.Curtains.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SmartApp.Device.Thermostat\\SmartApp.Device.Thermostat.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "SmartApp.Controller\\SmartApp.Controller.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
